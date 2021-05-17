@@ -1,16 +1,9 @@
 upstream my_server {
     ip_hash;
-    server 127.0.0.1:3000
+    server 127.0.0.1:3001;
 }
 server {
     listen 80;
-    # set $https_redirect 0;
-    # if ($server_port = 80) {
-    #     set $https_redirect 1;
-    # }
-    # if ($https_redirect = 1) {
-    #     return 301 https://publisher.nhadatmoi.net$request_uri;
-    # }
     server_name _;
     keepalive_timeout 600;
     large_client_header_buffers 8 32k;
